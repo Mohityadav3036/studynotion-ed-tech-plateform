@@ -19,10 +19,12 @@ function Catalog() {
   const [catalogPageData, setCatalogPageData] = useState(null)
   const [categoryId, setCategoryId] = useState("")
   // Fetch All Categories
+  
   useEffect(() => {
     ;(async () => {
       try {
         const res = await apiConnector("GET", categories.CATEGORIES_API)
+        
         const category_id = res?.data?.data?.filter(
           (ct) => ct.name.split(" ").join("-").toLowerCase() === catalogName
         )[0]._id
@@ -59,6 +61,7 @@ function Catalog() {
   return (
     <>
       {/* Hero Section */}
+
       <div className=" box-content bg-richblack-800 px-4">
         <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
           <p className="text-sm text-richblack-300">
@@ -119,6 +122,8 @@ function Catalog() {
         </div>
       </div>
 
+
+      
       {/* Section 3 */}
       <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
         <div className="section_heading">Frequently Bought</div>

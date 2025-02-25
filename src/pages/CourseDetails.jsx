@@ -15,6 +15,7 @@ import { fetchCourseDetails } from "../services/operations/courseDetailsAPI"
 import { BuyCourse } from "../services/operations/studentFeaturesAPI"
 import GetAvgRating from "../utils/avgRating"
 import Error from "./Error"
+import axios from "axios"
 
 function CourseDetails() {
   const { user } = useSelector((state) => state.profile)
@@ -37,6 +38,8 @@ function CourseDetails() {
       try {
         const res = await fetchCourseDetails(courseId)
         // console.log("course details res: ", res)
+
+        // const res = await axios
         setResponse(res)
       } catch (error) {
         console.log("Could not fetch Course Details")
@@ -155,9 +158,9 @@ function CourseDetails() {
                 <span>{`${studentsEnroled.length} students enrolled`}</span>
               </div>
               <div>
-                <p className="">
+                {/* <p className="">
                   Created By {`${instructor.firstName} ${instructor.lastName}`}
-                </p>
+                </p> */}
               </div>
               <div className="flex flex-wrap gap-5 text-lg">
                 <p className="flex items-center gap-2">
@@ -241,7 +244,7 @@ function CourseDetails() {
             <div className="mb-12 py-4">
               <p className="text-[28px] font-semibold">Author</p>
               <div className="flex items-center gap-4 py-4">
-                <img
+                {/* <img
                   src={
                     instructor.image
                       ? instructor.image
@@ -249,8 +252,8 @@ function CourseDetails() {
                   }
                   alt="Author"
                   className="h-14 w-14 rounded-full object-cover"
-                />
-                <p className="text-lg">{`${instructor.firstName} ${instructor.lastName}`}</p>
+                /> */}
+                {/* <p className="text-lg">{`${instructor.  firstName} ${instructor.lastName}`}</p> */}
               </div>
               <p className="text-richblack-50">
                 {instructor?.additionalDetails?.about}
