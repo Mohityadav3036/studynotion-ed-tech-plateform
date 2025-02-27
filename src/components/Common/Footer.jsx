@@ -72,12 +72,12 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col sm:flex-row justify-center items-center gap-4 ">
+        {/* <div className=" flex flex-col sm:flex-row justify-center items-center gap-4 ">
         <p className="text-white text-2xl my-2  ">Mohit Yadav ❤️ © 2023</p>
         <div className=" ">
         <img  src={Logo} alt="" width={120} height={32} className="rounded-xl border-2 border-white p-2" />
         </div>
-      </div>
+      </div> */}
       
       </footer>
     </>
